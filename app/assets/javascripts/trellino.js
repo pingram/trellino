@@ -3,5 +3,13 @@ window.Trellino = {
   Collections: {},
   Views: {},
   Routers: {},
-  initialize: function () {}
+  initialize: function() {
+    new Trellino.Routers.AppRouter();
+
+    Backbone.history.start();
+  }
 };
+
+$(document).ready(function(){
+  Trellino.initialize();
+});

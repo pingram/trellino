@@ -22,8 +22,9 @@ end
 
 gem 'jquery-ui-rails'
 gem 'backbone-on-rails'
-gem 'rake', '10.1.1'
+gem 'rake'
 gem 'bcrypt'
+gem 'serialize_json-rails'
 
 group :development, :test do
   gem 'rspec-rails'
