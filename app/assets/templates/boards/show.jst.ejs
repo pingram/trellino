@@ -2,3 +2,13 @@
 
 <%= board.escape('id') %>
 <%= board.escape('title') %>
+<br><br>
+
+Lists:<br>
+<ul>
+  <% _(board.get('lists')).each(function(list) { %>
+    <li><%= list.title %></li>
+  <% }) %>
+</ul>
+
+<a href="#">Back to Boards Index</a>

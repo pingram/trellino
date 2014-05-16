@@ -1,5 +1,7 @@
 <h3>Boards Index</h3>
 
 <% boards.each(function(board) { %>
-  <%= board.escape('title') %><br>
+  <a href="#boards/<%= board.id %>">
+    <%= board.escape('title') %>
+  </a><br>
 <% }) %>

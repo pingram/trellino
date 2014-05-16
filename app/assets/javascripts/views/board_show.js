@@ -6,6 +6,7 @@ Trellino.Views.BoardShow = Backbone.View.extend({
   },
 
   render: function() {
+    // TODO: show lists in order of rank --> override comparator
     var renderedContent = this.template({
       board: this.model
     });
