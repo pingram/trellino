@@ -1,6 +1,7 @@
 Trellino.Routers.AppRouter = Backbone.Router.extend({
   routes: {
-    '' : 'boardsIndex'
+    '' : 'boardsIndex',
+    'boards/:id' : 'boardShow'
   },
 
   boardsIndex: function() {
@@ -9,6 +10,14 @@ Trellino.Routers.AppRouter = Backbone.Router.extend({
     });
 
     Trellino.Collections.boards.fetch()
+    this._swapView(view);
+  },
+
+  boardShow: function(id) {
+    var board = Trellino.Collections.boards.getOrFetch(id);
+    var view = new Trellino.Views.BoardShow({
+      model: board
+    })
     this._swapView(view);
   },
 
