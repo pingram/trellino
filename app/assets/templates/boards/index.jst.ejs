@@ -3,7 +3,11 @@
 <% boards.each(function(board) { %>
   <a href="#boards/<%= board.id %>">
     <%= board.escape('title') %>
-  </a><br>
+  </a>
+  <button class='delete-board' data-id="<%= board.id %>">
+    Delete
+  </button>
+  <br>
 <% }) %>
 
 <br>

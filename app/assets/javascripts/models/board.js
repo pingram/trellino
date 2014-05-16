@@ -9,5 +9,15 @@ Trellino.Models.Board = Backbone.Model.extend({
     }
 
     return this._lists;
+  },
+
+  members: function() {
+    if (!this._members) {
+      this._members = new Trellino.Collections.BoardMembers([], {
+        board: this
+      });
+    }
+
+    return this._members;
   }
 });
