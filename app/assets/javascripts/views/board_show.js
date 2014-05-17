@@ -16,7 +16,6 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
-    // TODO: show lists in order of rank --> override comparator
     var renderedContent = this.template({
       board: this.model
     });
@@ -38,10 +37,7 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend({
   addAllLists: function() {
     var listShowView = this;
     var lists = this.model.lists();
-    // debugger
     lists.each(function (list) {
-      // debugger
-      console.log(list.get('title'))
       listShowView.addList(list);
     });
   }
