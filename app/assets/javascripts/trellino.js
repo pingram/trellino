@@ -22,7 +22,6 @@ Backbone.CompositeView = Backbone.View.extend({
     $selectorEl.append(subview.$el);
   },
 
-  // TODO: this is not getting called; why?
   remove: function() {
     Backbone.View.prototype.remove.call(this);
 

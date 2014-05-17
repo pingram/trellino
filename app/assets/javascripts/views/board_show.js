@@ -2,7 +2,7 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend({
   template: JST['boards/show'],
 
   initialize: function() {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync", this.addAllLists);
     this.listenTo(this.model.lists(), "sync", this.addAllLists);
 
     // TODO: come back to this; is fetch necessary??
@@ -29,12 +29,24 @@ Trellino.Views.BoardShow = Backbone.CompositeView.extend({
     var listShowView = new Trellino.Views.ListShow({
       model: list
     });
-    
+    if (this.subviews().length > 3) {
+      debugger
+    }
+
     this.addSubview(".lists", listShowView);
     listShowView.render();
   },
 
+  removeAllLists: function() {
+    _(this.subviews()['.lists']).each(function (subview) {
+      subview.remove();
+    })
+  },
+
   addAllLists: function() {
+    if (this.subviews()['.lists']) {
+      this.removeAllLists();
+    }
     var listShowView = this;
     var lists = this.model.lists();
     lists.each(function (list) {
