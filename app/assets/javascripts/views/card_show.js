@@ -1,4 +1,5 @@
 Trellino.Views.CardShow = Backbone.View.extend({
+  className: 'row card',
   template: JST['cards/show'],
 
   render: function() {
