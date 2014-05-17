@@ -31,8 +31,8 @@ class User < ActiveRecord::Base
     source: :card,
     inverse_of: :users
 
-  def self.find_by_credentials(username, password)
-    user = User.find_by_username(username)
+  def self.find_by_credentials(email, password)
+    user = User.find_by_email(email)
     user.try(:is_password?, password) ? user : nil
   end
 
