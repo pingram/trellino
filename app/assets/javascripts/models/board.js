@@ -19,5 +19,18 @@ Trellino.Models.Board = Backbone.Model.extend({
     }
 
     return this._members;
+  },
+
+  parse: function(resp) {
+    if (resp.lists) {
+      this.lists().set(resp.lists);
+      delete resp.lists;
+    }
+    if (resp.members) {
+      this.members().set(resp.members);
+      delete resp.members;
+    }
+
+    return resp
   }
 });
