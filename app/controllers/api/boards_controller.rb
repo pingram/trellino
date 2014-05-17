@@ -10,6 +10,12 @@ module Api
       render partial: "api/boards/board", locals: { board: @board }
     end
 
+    def members
+      @board = current_user.boards.find(params[:id])
+      @members = @board.members
+      render json: @members
+    end
+
     def create
       @board = current_user.boards.build(board_params)
       if @board.save

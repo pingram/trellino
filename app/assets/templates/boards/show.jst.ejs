@@ -7,3 +7,9 @@
 <div class="list-new"></div>
 
 <a href="#">Back to Boards Index</a>
+<br>
+
+Board Members:<br>
+<% members.each(function(member) { %>
+  <%= member.escape('email') %><br>
+<% }) %>

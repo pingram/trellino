@@ -1,5 +1,6 @@
 Trellino::Application.routes.draw do
   root to: 'static_pages#root'
+  get '/api/boards/:id/members', to: 'api/boards#members'
 
   namespace :api, defaults: { format: :json } do
     resources :boards, except: [:new, :edit] do
