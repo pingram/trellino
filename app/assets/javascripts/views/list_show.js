@@ -4,7 +4,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
   template: JST['lists/show'],
 
   initialize: function() {
-    this.listenTo(this.model, "sync", this.render);
+    this.listenTo(this.model, "sync", this.addAllCards);
     this.listenTo(this.model.cards(), "sync", this.addAllCards)
 
     this.model.cards().fetch();
@@ -30,7 +30,16 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     cardShowView.render();
   },
 
+  removeAllCards: function() {
+    _(this.subviews()['.cards']).each(function (subview) {
+      subview.remove();
+    });
+  },
+
   addAllCards: function() {
+    if (this.subviews()['.cards']) {
+      this.removeAllCards();
+    }
     var listShowView = this;
     var cards = this.model.cards();
     cards.each(function (card) {

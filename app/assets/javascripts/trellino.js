@@ -62,7 +62,6 @@ Backbone.CompositeView = Backbone.View.extend({
 })
 
 
-
 $(document).ready(function(){
   Trellino.initialize();
 });
