@@ -13,7 +13,8 @@ Trellino.Views.NewList = Backbone.View.extend({
 
   events: {
     'submit #new-list' : 'submit',
-    'click button' : 'openNew'
+    'click .open-view' : 'openNew',
+    'click .close-form' : 'closeNew'
   },
 
   render: function() {
@@ -27,6 +28,11 @@ Trellino.Views.NewList = Backbone.View.extend({
 
   openNew: function() {
     this.open = true;
+    this.render();
+  },
+
+  closeNew: function() {
+    this.open = false;
     this.render();
   },
 
