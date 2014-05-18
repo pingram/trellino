@@ -22,11 +22,11 @@ $link-color: white;
 @import "bootstrap";
 
 /* TODO: side padding not working */
-.list {
+div.list {
   background-color: #dbdbdb;
   margin: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 0px;
+  padding-right: 0px;
   float:left;
   color: gray-dark;
 }
@@ -38,8 +38,8 @@ h4 {
 .card {
   background-color: white;
   margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 0px;
+  margin-right: 0px;
   padding: 5px;
 }
 
