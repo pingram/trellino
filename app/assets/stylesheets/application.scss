@@ -13,6 +13,12 @@
  *= require_tree .
  */
 
+$navbar-default-bg: #1d658e;
+$navbar-default-link-color: white;
+$body-bg: #23719F;
+/* $text-color: white; */
+$link-color: white;
+
 @import "bootstrap";
 
 /* TODO: side padding not working */
@@ -22,6 +28,7 @@
   padding-left: 5px;
   padding-right: 5px;
   float:left;
+  color: gray-dark;
 }
 
 h4 {
@@ -40,18 +47,3 @@ h4 {
   padding-top: 5px;
   font-weight: bold;
 }
-
-/*
-body {
-  background-color: #23719F;
-}
-
-.navbar {
-  background-color: #1d658e;
-  color: white;
-}
-
-.navbar-nav {
-  color: white;
-}
-*/
