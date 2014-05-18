@@ -36,5 +36,14 @@ Trellino.Routers.AppRouter = Backbone.Router.extend({
     }
     this._currentView = view;
     $('#content').html(view.render().$el);
-  }
+    // this._installJQueryEvents();
+  },
+
+  // _installJQueryEvents: function () {
+  //   debugger
+  //   $('.card').mouseover(function() {
+  //     // debugger
+  //     console.log('hola');
+  //   });
+  // }
 });
