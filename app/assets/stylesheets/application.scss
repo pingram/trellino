@@ -15,6 +15,7 @@
 
 $navbar-default-bg: #1d658e;
 $navbar-default-link-color: white;
+$navbar-height: 35px;
 $body-bg: #23719F;
 /* $text-color: white; */
 $link-color: white;
@@ -46,4 +47,12 @@ h4 {
 .list-title {
   padding-top: 5px;
   font-weight: bold;
+}
+
+a.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: auto;
 }

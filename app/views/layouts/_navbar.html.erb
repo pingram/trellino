@@ -16,14 +16,12 @@
     </ul>
     <% end %>
 
-    <ul class="navbar-header">
-      <a class="navbar-brand" href="#">Trellino</a>
-    </ul>
+    <a class="navbar-brand" href="#">Trellino</a>
 
     <ul class="nav navbar-right">
       <li>
         <% if logged_in? %>
-          <%= button_to "Log out", session_url, { method: :delete, class: "btn btn-md btn-warning" } %>
+          <%= button_to "Log out", session_url, { method: :delete, class: "btn btn-sm btn-default" } %>
         <% else %>
           <%= link_to "Sign In", new_session_url, { class: "btn btn-default" } %>
         <% end %>
