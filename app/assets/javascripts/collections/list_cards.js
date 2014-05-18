@@ -3,6 +3,7 @@ Trellino.Collections.ListCards = Backbone.Collection.extend({
     // return "/api/boards/" + this.list.get("id") + "/cards";
     // debugger
     // console.log(this.list.id)
+    // url: 'api/cards'
     return "api/lists/" + this.list.id + "/cards";
   },
 
