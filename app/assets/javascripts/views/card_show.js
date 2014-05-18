@@ -29,8 +29,13 @@ Trellino.Views.CardShow = Backbone.View.extend({
   },
 
   delete: function (event) {
-    debugger
-    this.model.destroy();
+    var model = this.model
+
+    // TODO: ask about this and how to not explicitly specify the url here
+    model.destroy({
+      url: 'api/cards/' + model.id,
+      success: function() { console.log('card deleted'); }
+    });
     // event.preventDefault();
     // card = this.model;
     // debugger

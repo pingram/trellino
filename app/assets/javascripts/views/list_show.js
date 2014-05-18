@@ -5,7 +5,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.addAllCards);
-    this.listenTo(this.model.cards(), "sync", this.addAllCards)
+    this.listenTo(this.model.cards(), "sync destroy", this.addAllCards)
 
     // TODO: remove this extra fetch if possible
     this.model.cards().fetch();
