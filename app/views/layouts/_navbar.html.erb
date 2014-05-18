@@ -1,6 +1,8 @@
 <nav class="navbar navbar-default">
   <div class="container">
 
+    <a class="navbar-brand" href="#">Trellino</a>
+
     <% if logged_in? %>
     <ul class="nav navbar-nav">
       <li class="dropdown">
@@ -16,14 +18,12 @@
     </ul>
     <% end %>
 
-    <a class="navbar-brand" href="#">Trellino</a>
-
     <ul class="nav navbar-right">
       <li>
         <% if logged_in? %>
           <%= button_to "Log out", session_url, { method: :delete, class: "btn btn-sm btn-default" } %>
         <% else %>
-          <%= link_to "Sign In", new_session_url, { class: "btn btn-default" } %>
+          <%= link_to "Sign In", new_session_url, { class: "btn btn-sm btn-default" } %>
         <% end %>
       </li>
     </ul>

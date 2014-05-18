@@ -1,12 +1,17 @@
 <h3>Boards Index</h3>
 
 <% boards.each(function(board) { %>
-  <a href="#boards/<%= board.id %>">
-    <%= board.escape('title') %>
-  </a>
-  <button class='delete-board btn btn-default btn-sm' data-id="<%= board.id %>">
-    Delete
-  </button>
+  <div class="row">
+    <div class="col-md-1">
+      <a href="#boards/<%= board.id %>">
+        <%= board.escape('title') %>
+      </a>
+    </div>
+    <button class='delete-board btn btn-default btn-sm' data-id="<%= board.id %>">
+      Delete
+    </button>
+    <br>
+  </div>
   <br>
 <% }) %>
 
