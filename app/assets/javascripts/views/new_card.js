@@ -18,6 +18,8 @@ Trellino.Views.NewCard = Backbone.View.extend({
 
   invalidInput: function () {
     console.log('hola');
+    var $errorField = this.$el.find('input.card-title');
+    $errorField.addClass('input-error');
   },
 
   render: function () {
