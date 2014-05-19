@@ -24,6 +24,11 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 
     this.$el.html(renderedContent);
     this.renderSubviews();
+
+    $( ".sortable" ).sortable({
+    });
+    $( ".sortable" ).disableSelection();
+
     return this;
   },
 
