@@ -1,5 +1,5 @@
 Trellino.Views.CardShow = Backbone.View.extend({
-  className: 'row card ui-state-default',
+  className: 'row card',
   template: JST['cards/show'],
 
   events: {
@@ -22,6 +22,8 @@ Trellino.Views.CardShow = Backbone.View.extend({
     var renderedContent = this.template({
       card: this.model
     });
+    
+    this.$el.attr('data-card-id', this.model.id)
 
     this.$el.html(renderedContent);
     this.$el.find('.delete-card').hide();

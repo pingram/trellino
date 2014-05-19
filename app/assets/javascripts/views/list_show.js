@@ -18,6 +18,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
   },
 
   render: function() {
+    var view = this;
     var renderedContent = this.template({
       list: this.model
     });
@@ -25,11 +26,22 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     this.$el.html(renderedContent);
     this.renderSubviews();
 
-    $( ".sortable" ).sortable({
+    $("#sortable-list-" + view.model.id).sortable({
+      stop: function(evt, ui){
+        console.log($("#sortable-list-" + view.model.id).sortable('toArray',
+          { attribute: 'data-card-id' }
+        ));
+      }
     });
+
+    $(".sortable").sortable('toArray', { attribute: 'data-card-id' })
     $( ".sortable" ).disableSelection();
 
     return this;
+  },
+
+  sortUpdate: function() {
+
   },
 
   addCard: function (card) {
