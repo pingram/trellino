@@ -7,7 +7,8 @@
         <%= board.escape('title') %>
       </a>
     </div>
-    <button class='delete-board btn btn-default btn-sm' data-id="<%= board.id %>">
+    
+    <button class='btn btn-default btn-sm' data-toggle="modal" data-target="#confirm-delete" data-board-id='<%= board.id %>'>
       Delete
     </button>
     <br>
@@ -18,3 +19,22 @@
 <br>
 
 <a href="#boards/new">Create new board</a>
+
+<!-- Modal -->
+<div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="delete-board btn btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

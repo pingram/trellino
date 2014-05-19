@@ -18,6 +18,7 @@
 //= require backbone
 //= require bootstrap
 //= require trellino
+//= require modal
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
