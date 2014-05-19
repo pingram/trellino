@@ -23,7 +23,7 @@
         <% if logged_in? %>
           <%= button_to "Log out", session_url, { method: :delete, class: "btn btn-sm btn-default" } %>
         <% else %>
-          <%= link_to "Sign In", new_session_url, { class: "btn btn-sm btn-default" } %>
+          <%= button_to "Sign In", new_session_url, { method: :get, class: "btn btn-sm btn-default" } %>
         <% end %>
       </li>
     </ul>
