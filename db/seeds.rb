@@ -9,6 +9,9 @@
 users = User.create!([
   { email: "asdf", password: "asdfasdf" }
 ])
+5.times do |i|
+  User.create!({ email: "user#{i}", password: "asdfasdf" })
+end
 
 boards = Board.create!([
   { title: "Home" }, #1

@@ -10,6 +10,11 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     // TODO: remove this extra fetch if possible
     this.model.cards().fetch();
     this.model.cards().each(this.addCard.bind(this));
+
+    var newCardView = new Trellino.Views.NewCard({
+      list: this.model
+    });
+    this.addSubview('.new-card', newCardView);
   },
 
   render: function() {
