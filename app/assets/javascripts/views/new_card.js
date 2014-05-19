@@ -1,16 +1,21 @@
 Trellino.Views.NewCard = Backbone.View.extend({
-  template: JST['cards/new'],
+  template: function() {
+    return (this.open ? JST['cards/new'] : JST['cards/newadd']);
+  },
 
   initialize: function (options) {
     this.list = options.list
+    this.open = false;
   },
 
   events: {
-    'submit form': 'submit'
+    'submit form': 'submit',
+    'click .open-btn': 'openForm',
+    'click .close-btn': 'closeForm'
   },
 
   render: function () {
-    var renderedContent = this.template({
+    var renderedContent = this.template()({
       model: new Trellino.Models.Card(),
       newRank: 1000
     });
@@ -18,8 +23,21 @@ Trellino.Views.NewCard = Backbone.View.extend({
     return this;
   },
 
+  openForm: function (event) {
+    event.preventDefault();
+    this.open = true;
+    this.render();
+  },
+
+  closeForm: function (event) {
+    event.preventDefault();
+    this.open = false;
+    this.render();
+  },
+
   submit: function (event) {
     event.preventDefault();
+    var view = this;
     var list = this.list;
     $target = $(event.currentTarget);
     var newCard = new Trellino.Models.Card($target.serializeJSON()['card']);
@@ -28,6 +46,8 @@ Trellino.Views.NewCard = Backbone.View.extend({
       success: function () {
         console.log('card saved successfully');
         $target.find('input.card-title').val('');
+        view.open = false;
+        view.render();
       }
     })  
   },
