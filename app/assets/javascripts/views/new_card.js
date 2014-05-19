@@ -17,7 +17,7 @@ Trellino.Views.NewCard = Backbone.View.extend({
   render: function () {
     var renderedContent = this.template()({
       model: new Trellino.Models.Card(),
-      newRank: 1000
+      newRank: 9999
     });
     this.$el.html(renderedContent);
     return this;

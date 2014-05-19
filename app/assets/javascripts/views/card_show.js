@@ -2,6 +2,10 @@ Trellino.Views.CardShow = Backbone.View.extend({
   className: 'row card',
   template: JST['cards/show'],
 
+  initialize: function () {
+    this.listenTo(this.model, 'sync', this.render);
+  },
+
   events: {
     'click .delete-card' : 'delete',
     'mouseover': 'mouseoverFn',

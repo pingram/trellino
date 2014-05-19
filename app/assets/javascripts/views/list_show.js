@@ -59,7 +59,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     // debugger
       card.save([],{
         url: "api/cards/" + card.id, // Trellino.Models.Card.urlRoot
-        success: function() {console.log('success')}
+        success: function() { console.log('card updated') }
       });
     });
 
