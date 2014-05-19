@@ -1,1 +1,3 @@
-Trellino.Models.Card = Backbone.Model.extend({});
+Trellino.Models.Card = Backbone.Model.extend({
+  // urlRoot: 'api/cards'
+});

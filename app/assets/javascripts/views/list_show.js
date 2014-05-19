@@ -5,7 +5,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 
   initialize: function() {
     this.listenTo(this.model, "sync", this.addAllCards);
-    this.listenTo(this.model.cards(), "sync destroy", this.addAllCards)
+    this.listenTo(this.model.cards(), "add destroy", this.addAllCards)
 
     // TODO: remove this extra fetch if possible
     this.model.cards().fetch();
@@ -28,7 +28,7 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
 
     $("#sortable-list-" + view.model.id).sortable({
       stop: function(evt, ui){
-        console.log($("#sortable-list-" + view.model.id).sortable('toArray',
+        view.sortUpdate($("#sortable-list-" + view.model.id).sortable('toArray',
           { attribute: 'data-card-id' }
         ));
       }
@@ -40,8 +40,33 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     return this;
   },
 
-  sortUpdate: function() {
+  sortUpdate: function(newIds) {
+    console.log('\n\n');
+    var listId = this.model.id;
+    // for (var i = 0; i < newIds.length; i++) {
+    //   var mycard = this.model.cards().models[i];
+    //   console.log(mycard.get('rank') + ": " + mycard.id);
+    // }
 
+    for (var i = 0; i < newIds.length; i++) {
+      var mycard = this.model.cards().models[i];
+      mycard.set('rank', newIds.indexOf("" + mycard.id));
+    }
+
+    this.model.cards().each(function(card) {
+      // card.url = "api/cards/" + card.id;
+
+    // debugger
+      card.save([],{
+        url: "api/cards/" + card.id, // Trellino.Models.Card.urlRoot
+        success: function() {console.log('success')}
+      });
+    });
+
+    // for (var i = 0; i < newIds.length; i++) {
+    //   var mycard = this.model.cards().models[i];
+    //   console.log(mycard.get('rank') + ": " + mycard.id);
+    // }
   },
 
   addCard: function (card) {
