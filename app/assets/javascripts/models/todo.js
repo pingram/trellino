@@ -1,0 +1,1 @@
+Trellino.Models.Todo = Backbone.Model.extend({ });

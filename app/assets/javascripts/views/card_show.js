@@ -7,12 +7,20 @@ Trellino.Views.CardShow = Backbone.View.extend({
   },
 
   events: {
+    'click' : 'showDetails',
     'click .delete-card' : 'delete',
     'mouseover': 'mouseoverFn',
     'mouseleave': 'mouseleaveFn'
   },
 
-  mouseoverFn: function(event) {
+  showDetails: function (event) {
+    if ($(event.target).attr('type') === 'button') {
+      return;
+    }
+    console.log('clicked card');
+  },
+
+  mouseoverFn: function (event) {
     $target = $(event.currentTarget);
     $target.find('.delete-card').show();
   },
