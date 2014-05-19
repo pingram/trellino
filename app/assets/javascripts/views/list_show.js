@@ -27,6 +27,8 @@ Trellino.Views.ListShow = Backbone.CompositeView.extend({
     this.renderSubviews();
 
     $("#sortable-list-" + view.model.id).sortable({
+      // connectWith: '.sortable',
+      axis: 'y',
       stop: function(evt, ui){
         view.sortUpdate($("#sortable-list-" + view.model.id).sortable('toArray',
           { attribute: 'data-card-id' }
