@@ -10,4 +10,10 @@ Username: asdf
 Password: asdfasdf
 
 TODO:
-* Improve CSS, specifically font color
+* Allow dragging between lists
+* Improve display of board members
+* Show Todo items on card details modal
+* Fix highlighting of navbar button
+* Improve user feedback for adding members
+* Users can be assigned to cards
+* Add modals where necessary for deletion items
