@@ -22,7 +22,8 @@ Trellino.Views.CardShow = Backbone.View.extend({
     if ($(event.target).attr('type') === 'button') {
       return;
     }
-    var cardId = $(event.target).data('card-id');
+    // debugger
+    var cardId = $(event.currentTarget).data('card-id');
     console.log('clicked card ' + cardId);
     $('#card-details-modal-' + cardId).modal('show');
   },
