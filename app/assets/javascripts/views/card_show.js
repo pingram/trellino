@@ -4,6 +4,11 @@ Trellino.Views.CardShow = Backbone.View.extend({
 
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    // debugger
+    // this.model.todos() = new Trellino.Collections.CardTodos({
+    //   card: this.model
+    // });
+    // this.model.todos().fetch();
   },
 
   events: {
@@ -17,7 +22,9 @@ Trellino.Views.CardShow = Backbone.View.extend({
     if ($(event.target).attr('type') === 'button') {
       return;
     }
-    console.log('clicked card');
+    var cardId = $(event.target).data('card-id');
+    console.log('clicked card ' + cardId);
+    $('#card-details-modal-' + cardId).modal('show');
   },
 
   mouseoverFn: function (event) {

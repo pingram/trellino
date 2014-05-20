@@ -17,8 +17,8 @@ Trellino.Views.NewCard = Backbone.View.extend({
   },
 
   invalidInput: function () {
-    console.log('hola');
-    var $errorField = this.$el.find('input.card-title');
+    console.log('input was invalid');
+    var $errorField = this.$el.find('textarea.card-title');
     $errorField.addClass('input-error');
   },
 
@@ -57,7 +57,6 @@ Trellino.Views.NewCard = Backbone.View.extend({
       method: 'post',
       success: function () {
         console.log('card saved successfully to DB');
-        $target.find('input.card-title').val('');
         list.cards().add(card);
         view.card = new Trellino.Models.Card();
         // TODO: don't like that we have to re-add this:
@@ -69,5 +68,6 @@ Trellino.Views.NewCard = Backbone.View.extend({
         console.log('error saving card to DB');
       }
     })
+    $target.find('textarea.card-title').val('');
   },
 });

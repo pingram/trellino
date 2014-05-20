@@ -28,6 +28,7 @@ div.list {
   margin: 10px;
   padding-left: 0px;
   padding-right: 0px;
+  padding-bottom: 10px;
   float:left;
   color: gray-dark;
 }
@@ -42,6 +43,11 @@ h4 {
   margin-left: 0px;
   margin-right: 0px;
   padding: 5px;
+  min-height: 35px;  /* for the delete button */
+}
+
+.card:hover {
+  background-color: #F0F0F0;
 }
 
 .list-title {
@@ -58,9 +64,13 @@ a.navbar-brand {
 }
 
 .input-error {
-  background-color: #F08080;
+  background-color: #ffa5a5;
 }
 
 .modal-dialog {
   width: 250px;
+}
+
+.open-btn, .new-card {
+  margin-top: 10px;
 }
