@@ -60,9 +60,6 @@ Trellino.Views.NewCard = Backbone.View.extend({
         list.cards().add(card);
         view.card = new Trellino.Models.Card();
         // TODO: don't like that we have to re-add this:
-        view.listenTo(view.card, 'invalid', view.invalidInput);
-        view.open = false;
-        view.render();
       },
       error: function () {
         console.log('error saving card to DB');

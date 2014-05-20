@@ -39,5 +39,8 @@ Trellino.Views.NewMember = Backbone.View.extend({
         $(event.currentTarget).find('.new-member-email').val('');
       }
     });
+    $('#add-member-modal').modal('hide');
+    $('body').removeClass('modal-open');
+    $('.modal-backdrop').remove();
   }
 });

@@ -17,7 +17,7 @@ $navbar-default-bg: #1d658e;
 $navbar-default-link-color: white;
 $navbar-height: 35px;
 $body-bg: #23719F;
-/* $text-color: white; */
+$text-color: white;
 $link-color: white;
 
 @import "bootstrap";
@@ -30,14 +30,19 @@ div.list {
   padding-right: 0px;
   padding-bottom: 10px;
   float:left;
-  color: gray-dark;
+  color: #333333;
 }
 
 h4 {
   font-weight: bold;
 }
 
+.modal-title {
+  color: #333333;
+}
+
 .card {
+  color: #333333;
   background-color: white;
   margin-top: 5px;
   margin-left: 0px;

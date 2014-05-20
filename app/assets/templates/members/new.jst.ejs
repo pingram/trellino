@@ -1,6 +1,25 @@
-<form class="new-member-form">
-  <label>Email:
-    <input class='new-member-email' name="newMemberEmail">
-  </label>
-  <input type="submit" value="Add member">
-</form>
+<button class='btn btn-default btn-sm' data-toggle="modal" data-target="#add-member-modal">
+  Add Member
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="add-member-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Add Member</h4>
+      </div>
+      <div class="modal-body">
+
+        <form class="new-member-form" role="form">
+              <label>Email:
+                <input class='new-member-email form-control' name="newMemberEmail">
+              </label>
+              <input type="submit" class="form-control btn btn-xs" value="Add">
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
