@@ -25,3 +25,13 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree ../templates
+
+// $(document).ready(function () {
+//   $('body').on('click', '#guest-account', function (event) {
+//     $.ajax({
+//       url: '/session',
+//       type: 'POST',
+//       data: { guest: true }
+//     })
+//   })
+// })

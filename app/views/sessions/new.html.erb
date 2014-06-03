@@ -4,26 +4,35 @@
   <h1>Sign In</h1>
 
   <div class="row">
-    <form role="form" class="col-md-3"
-      action="<%= session_url %>" method="post">
-      <%= auth_token_input %>
-      <div class="form-group">
-        <label>
-          Email<br>
-          <input type="text" class="form-control" name="user[email]">
-        </label>
-      </div>
-      <div class="form-group">
-        <label>
-          Password<br>
-          <input type="password" class="form-control" name="user[password]">
-        </label>
-      </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Login">
-      </div>
-      <a href="<%= new_user_url %>">New to Trellino?</a>
-    </form>
+    <div class="col-md-3">
+      <form role="form"
+        action="<%= session_url %>" method="post">
+        <%= auth_token_input %>
+        <div class="form-group">
+          <label>
+            Email<br>
+            <input type="text" class="form-control" name="user[email]">
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            Password<br>
+            <input type="password" class="form-control" name="user[password]">
+          </label>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Login">
+          <a href="<%= new_user_url %>">New to Trellino?</a>
+        </div>
+      </form>
+
+
+      <form action="<%= session_url %>" method="post">
+        <%= auth_token_input %>
+        <input type="hidden" name="guest" value="true">
+        <input type="submit" value="Guest Account" class="btn btn-success btn-lg col-md-9">
+      </form>
+    </div>
   </div>
 
 </div>
